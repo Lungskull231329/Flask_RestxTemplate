@@ -1,0 +1,16 @@
+<ol class="list-group list-group-numbered">
+    {% set count = namespace(value=0) %}
+    {% for file in list_files %}
+        {% set count.value = count.value + 1 %}
+        {% set modal_id = "exampleModal" + count.value | string() %}
+        {% set download = "download" %}
+        {% set delete = "delete" %}
+        {% set name_file = file['name_file'] %}
+        <li class="list-group-item" style="display: flex">{{ file }}
+            <button type="submit" class="btn btn-success" onclick="downloadFileFromURL('{{ name_file }}');">Скачать</button>
+            <button type="button" class="btn btn-danger" onclick="changeInfoModal('{{ name_file }}')" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-left: 1rem;">
+                Удалить
+            </button>
+        </li>
+    {% endfor %}
+</ol>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<div id="test" name="test">
+    ПРИВЕТ ВСЕМ
+</div>
+<button type="button" onclick="get_test(7)">НАЖМИ МЕНЯ</button>
+<button type="button" onclick="get_data()">НАЖМИ МЕНЯ</button>
+
+
+<script>
+
+    let count = 0;
+
+    function get_test(int) {
+        let test = document.getElementsByTagName('div');
+        {#console.log(test[0].innerText);#}
+        test[0].innerText = count;
+        count--;
+    }
+
+</script>
+</body>
+</html>
